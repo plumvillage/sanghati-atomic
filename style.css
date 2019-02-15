@@ -1,0 +1,86 @@
+/*
+ Theme Name:   Sanghati (atomic)
+ Theme URI:    https://github.com/plumvillage/sanghati-atomic
+ Description:  Theme for Plum Village practice centers
+ Author:       Duc Pho
+ Author URI:   https://plumvillage.org
+ Template:     atomic-blocks
+ Version:      1.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+/* Color scheme:
+
+orange	rgb(214, 133, 26)
+brown	rgb(63, 46, 26)
+light	rgb(138, 84, 48)
+red		rgb(115, 35, 1)
+dark	rgb(36, 13, 0)
+
+ */
+
+
+.site-header,
+.site-footer {
+	background-color: rgb(214, 133, 26);
+	color: rgb(63, 46, 26);
+}
+
+.site-header a,
+.site-footer a {
+	color: rgb(63, 46, 26) !important;
+}
+
+/* =Header */
+.top-navigation-right {
+	position: absolute;
+	bottom: 0;
+}
+
+.site-header .sub-menu:before {
+	border-bottom-color: transparent;
+}
+.main-navigation .sub-menu,
+.main-navigation .children {
+	background-color: rgb(214, 133, 26);
+}
+
+.drawer,
+.drawer .menu-item-has-children .toggle-sub {
+	background: none;
+}
+
+@media (max-width: 1000px) {
+	.drawer-menu-explore {
+		background: none;
+	}
+}
+
+/* =Home */
+body.home .wooslider .slide-content {
+	margin: 0;
+}
+
+.home .wooslider {
+	border: 0 none;
+}
+
+.home .slide-content > p {
+	margin-bottom: 0;
+}
+
+.home .home-content {
+	max-width: 1080px;
+	margin: auto;
+}
+
+.home .wp-block-column:first-child {
+	width: 68%;
+}
+
+@media only screen and (min-width: 600px) {
+	.ab-block-post-grid .is-list .ab-block-post-grid-title {
+	font-size: 28px;
+	}
+}
