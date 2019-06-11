@@ -1,0 +1,162 @@
+/*
+Color scheme:
+
+orange	rgb(214, 133, 26)
+brown	rgb(63, 46, 26)
+light	rgb(138, 84, 48)
+red		rgb(115, 35, 1)
+dark	rgb(36, 13, 0)
+
+*/
+
+/* ==========================================================================
+   Variables
+   ========================================================================== */
+
+/* Colors */
+
+$orange: rgb(214, 133, 26);
+$brown: rgb(63, 46, 26);
+$light: rgb(138, 84, 48);
+$red: rgb(115, 35, 1);
+$dark: rgb(36, 13, 0);
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+
+.site-header,
+.site-footer {
+  background-color: $orange;
+  color: $brown;
+}
+
+.site-header a,
+.site-footer a {
+  color: $brown !important;
+}
+
+.top-navigation-right {
+  position: absolute;
+  bottom: 0;
+}
+
+.site-header .sub-menu:before {
+  border-bottom-color: transparent;
+}
+.main-navigation .sub-menu,
+.main-navigation .children {
+  background-color: $orange;
+}
+
+.drawer,
+.drawer .menu-item-has-children .toggle-sub {
+  background: none;
+}
+
+@media (max-width: 1000px) {
+  .drawer-menu-explore {
+    background: none;
+  }
+}
+
+/* ==========================================================================
+   Home
+   ========================================================================== */
+
+body.home .wooslider .slide-content {
+  margin: 0;
+}
+
+.home .wooslider {
+  border: 0 none;
+}
+
+.home .slide-content > p {
+  margin-bottom: 0;
+}
+
+.home .home-content {
+  max-width: 1080px;
+  margin: auto;
+}
+
+.home .wp-block-column:first-child {
+  width: 68%;
+}
+
+@media only screen and (min-width: 600px) {
+  .ab-block-post-grid .is-list .ab-block-post-grid-title {
+  font-size: 28px;
+  }
+}
+
+/* ==========================================================================
+   Cards
+   ========================================================================== */
+
+.ugb-card {
+  border: 1px solid #ccc;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,.16);
+  }
+
+  &__title,
+  &__description {
+    margin: 0 15px;
+  }
+
+  .ugb-button {
+    margin: 10px 15px;
+    width: 100%;
+    text-align: center;
+    border-color: $orange;
+    background-color: white;
+    transition: all 0.3s ease;
+
+    .ugb-button--inner {
+      color: $orange;
+      transition: all 0.3s ease;
+    }
+
+    &:hover {
+      border-color: lighten($orange, 10%);
+    }
+
+    &:hover .ugb-button--inner {
+      opacity: 1;
+      color: lighten($orange, 10%);
+    }
+  }
+}
+
+/* ==========================================================================
+   Give pages
+   ========================================================================== */
+
+.page .entry-content .give-form-wrap > h2 {
+  display: none;
+}
+
+#page {
+  padding-top: 2% !important;
+}
+
+.container {
+  padding: 0 3% !important;
+}
+
+.post .entry-header {
+  margin-bottom: 2% !important;
+}
+
+[id*=give-form] .give-recurring-donors-choice-period {
+  font-size: unset !important;
+}
+
+[id*=give-form] .give-recurring-donors-choice label {
+  font-size: unset !important;
+}

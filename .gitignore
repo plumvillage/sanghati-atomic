@@ -1,1 +1,4 @@
-wpedeploy.json
+wpedeploy.json/
+node_modules/
+css/
+js/
