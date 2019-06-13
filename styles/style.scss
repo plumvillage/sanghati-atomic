@@ -137,7 +137,7 @@ body.home .wooslider .slide-content {
   cursor: pointer;
   border: 1px solid $light-gray;
   margin-top: 0;
-  transition: all 0.3s ease;
+  transition: box-shadow 0.3s ease;
 
   .ugb-button {
     margin: 10px 15px;
@@ -145,11 +145,11 @@ body.home .wooslider .slide-content {
     text-align: center;
     border-color: $orange;
     background-color: $white;
-    transition: all 0.3s ease;
+    transition: border-color 0.3s ease;
 
     .ugb-button--inner {
       color: $orange;
-      transition: all 0.3s ease;
+      transition: color 0.3s ease;
     }
   }
 
