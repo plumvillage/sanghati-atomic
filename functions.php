@@ -9,7 +9,10 @@ add_action( 'wp_enqueue_scripts', function () {
 
     wp_enqueue_style(
         'style.min.css',
-        get_stylesheet_directory_uri() . '/css/style.min.css'
+        get_stylesheet_directory_uri() . '/css/style.min.css',
+        [
+            'atomic-blocks-shared-styles'
+        ]
     );
 
     wp_enqueue_script(
