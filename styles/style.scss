@@ -1,25 +1,30 @@
-/*
-Color scheme:
-
-orange	rgb(214, 133, 26)
-brown	rgb(63, 46, 26)
-light	rgb(138, 84, 48)
-red		rgb(115, 35, 1)
-dark	rgb(36, 13, 0)
-
-*/
-
 /* ==========================================================================
    Variables
    ========================================================================== */
 
 /* Colors */
 
+$white: rgb(255, 255, 255);
+$light-gray: rgb(204, 204, 204);
 $orange: rgb(214, 133, 26);
 $brown: rgb(63, 46, 26);
 $light: rgb(138, 84, 48);
 $red: rgb(115, 35, 1);
 $dark: rgb(36, 13, 0);
+
+/* Breakpoints */
+
+// Small tablets and large smartphones (landscape view)
+$screen-sm-min: 600px;
+
+// Small tablets (portrait view)
+$screen-md-min: 782px;
+
+// Tablets and small desktops
+$screen-lg-min: 1000px;
+
+// Large tablets and desktops
+$screen-xl-min: 1200px;
 
 /* ==========================================================================
    Header
@@ -54,7 +59,7 @@ $dark: rgb(36, 13, 0);
   background: none;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: $screen-lg-min) {
   .drawer-menu-explore {
     background: none;
   }
@@ -81,27 +86,85 @@ body.home .wooslider .slide-content {
   margin: auto;
 }
 
-.home .wp-block-column:first-child {
-  width: 68%;
-}
+// .home .wp-block-column:first-child {
+//   width: 68%;
+// }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: $screen-sm-min) {
   .ab-block-post-grid .is-list .ab-block-post-grid-title {
-  font-size: 28px;
+    font-size: 28px;
   }
 }
 
 /* ==========================================================================
-   Cards
+   Posts
+   ========================================================================== */
+
+.post .entry-header {
+  margin-bottom: 0;
+}
+
+/* ==========================================================================
+   Columns
+   ========================================================================== */
+
+.wp-block-column {
+  display: flex;
+}
+
+// Make the column full width when the screen is medium size or less
+@media only screen and (max-width: $screen-md-min) {
+  .wp-block-column {
+    width: 100%;
+  }
+
+  .wp-block-column:not(:first-child),
+  .wp-block-column:nth-child(2n),
+  .wp-block-column:not(:last-child) {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
+/* ==========================================================================
+   Cards (Stackable)
    ========================================================================== */
 
 .ugb-card {
-  border: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
   cursor: pointer;
-  transition: all 0.3s ease;
+  border: 1px solid $light-gray;
+  margin-top: 0;
+  transition: box-shadow 0.3s ease;
+
+  .ugb-button {
+    margin: 10px 15px;
+    width: 100%;
+    text-align: center;
+    border-color: $orange;
+    background-color: $white;
+    transition: border-color 0.3s ease;
+
+    .ugb-button--inner {
+      color: $orange;
+      transition: color 0.3s ease;
+    }
+  }
 
   &:hover {
-    box-shadow: 0 4px 12px rgba(0,0,0,.16);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .16);
+
+    .ugb-button {
+      opacity: 1;
+      border-color: darken($orange, 10%);
+
+      .ugb-button--inner {
+        opacity: 1;
+        color: darken($orange, 10%);
+      }
+    }
   }
 
   &__title,
@@ -109,27 +172,8 @@ body.home .wooslider .slide-content {
     margin: 0 15px;
   }
 
-  .ugb-button {
-    margin: 10px 15px;
-    width: 100%;
-    text-align: center;
-    border-color: $orange;
-    background-color: white;
-    transition: all 0.3s ease;
-
-    .ugb-button--inner {
-      color: $orange;
-      transition: all 0.3s ease;
-    }
-
-    &:hover {
-      border-color: lighten($orange, 10%);
-    }
-
-    &:hover .ugb-button--inner {
-      opacity: 1;
-      color: lighten($orange, 10%);
-    }
+  &__description {
+    flex-grow: 1;
   }
 }
 
@@ -147,10 +191,6 @@ body.home .wooslider .slide-content {
 
 .container {
   padding: 0 3% !important;
-}
-
-.post .entry-header {
-  margin-bottom: 2% !important;
 }
 
 [id*=give-form] .give-recurring-donors-choice-period {
